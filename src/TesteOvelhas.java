@@ -5,13 +5,13 @@ public class TesteOvelhas {
 
         ListaOvelhas l = new ListaOvelhas();
 
-        MachoAdulto m1 = new MachoAdulto(1, "Forlan", Sexo.macho, "romanov", new Data(01,01,2017));
+        MachoAdulto m1 = new MachoAdulto(1, "Forlan", Sexo.macho, "romanov", new Data(01,01,2017), CategoriaMacho.reprodutor);
         l.addOvelha(m1);
-        MachoAdulto m2 = new MachoAdulto(1, "Forlan2", Sexo.macho, "romanov", new Data(01,01,2017));
+        MachoAdulto m2 = new MachoAdulto(1, "Forlan2", Sexo.macho, "romanov", new Data(01,01,2017), CategoriaMacho.corte);
         l.addOvelha(m2);
-        MachoAdulto m3 = new MachoAdulto(1, "Forlan3", Sexo.macho, "romanov", new Data(01,01,2017));
+        MachoAdulto m3 = new MachoAdulto(1, "Forlan3", Sexo.macho, "romanov", new Data(01,01,2017), CategoriaMacho.reprodutor);
         l.addOvelha(m3);
-        MachoAdulto m4 = new MachoAdulto(1, "Forlan4", Sexo.macho, "romanov", new Data(01,01,2017));
+        MachoAdulto m4 = new MachoAdulto(1, "Forlan4", Sexo.macho, "romanov", new Data(01,01,2017), CategoriaMacho.corte);
         l.addOvelha(m4);
 
         FemeaAdulta f1 = new FemeaAdulta(5, "Branquinha", Sexo.femea, "romaov", new Data(01,01,2017));
@@ -41,9 +41,13 @@ public class TesteOvelhas {
         f1.mostraFilhos();
 
         System.out.println("\n\n");
-        f1.mostraDados();
+        //f1.mostraDados();
+        l.listaReprodutor();
 
         System.out.println("\n\n");
-        l.listaFemeas();
+        l.listaCorte();
+
+        System.out.println("\n\n");
+        l.listaMachos();
     }
 }

@@ -39,8 +39,8 @@ public class FemeaAdulta extends Ovelha {
 
     //mostra os dados do animal para relatorio geral
     public void mostraDados(){
-        System.out.println("Dados da Femea Adulta:");
-        System.out.print("Nome: " + getNome() + " Sexo: " + getSexo() + " Raça: " + getRaca() +
+        //System.out.println("Dados da Femea Adulta:");
+        System.out.println("Nome: " + getNome() + " Sexo: " + getSexo() + " Raça: " + getRaca() +
                 " Data Nascimento: " + getNascimento().getDia() + "/" + getNascimento().getMes() + "/" + getNascimento().getAno());
     }
 

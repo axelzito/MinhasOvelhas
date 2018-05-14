@@ -13,6 +13,10 @@ public class ListaOvelhas {
         ovelhas.add(ovelha);
     }
 
+    void removeOvelha(Ovelha ovelha) {
+        ovelhas.remove(ovelha);
+    }
+
     //lista todos os animais do rebanho
     public void listaOvelhas(){
 
@@ -21,10 +25,10 @@ public class ListaOvelhas {
 
         Ovelha o;
 
+        System.out.println("Dados de todos os animais do rebanho: ");
         while (i.hasNext()) {
             o = (Ovelha) i.next();
-            System.out.println("Nome: " + o.getNome() + " Sexo: " + o.getSexo() + " Raça: " + o.getRaca() +
-                    " Data Nascimento: " + o.getNascimento().getDia() + "/" + o.getNascimento().getMes() + "/" + o.getNascimento().getAno());
+            o.mostraDados();
         }
     }
 
@@ -36,11 +40,43 @@ public class ListaOvelhas {
 
         Ovelha o;
 
+        System.out.println("Dados de todos os machos: ");
         while (i.hasNext()) {
             o = (Ovelha) i.next();
             if(o instanceof MachoAdulto) {
-                System.out.println("Nome: " + o.getNome() + " Sexo: " + o.getSexo() + " Raça: " + o.getRaca() +
-                        " Data Nascimento: " + o.getNascimento().getDia() + "/" + o.getNascimento().getMes() + "/" + o.getNascimento().getAno());
+                o.mostraDados();
+            }
+        }
+    }
+
+    public void listaReprodutor(){
+
+        String ovelha = null;
+        Iterator i = ovelhas.iterator();
+
+        Ovelha o;
+
+        System.out.println("Dados dos machos reprodutores: ");
+        while (i.hasNext()) {
+            o = (Ovelha) i.next();
+            if(o instanceof MachoAdulto && (((MachoAdulto) o).getCategoria() == CategoriaMacho.reprodutor)) {
+                o.mostraDados();
+            }
+        }
+    }
+
+    public void listaCorte(){
+
+        String ovelha = null;
+        Iterator i = ovelhas.iterator();
+
+        Ovelha o;
+
+        System.out.println("Dados dos machos de corte: ");
+        while (i.hasNext()) {
+            o = (Ovelha) i.next();
+            if(o instanceof MachoAdulto && (((MachoAdulto) o).getCategoria() == CategoriaMacho.corte)) {
+                o.mostraDados();
             }
         }
     }
@@ -53,11 +89,11 @@ public class ListaOvelhas {
 
         Ovelha o;
 
+        System.out.println("Dados de todas as femeas: ");
         while (i.hasNext()) {
             o = (Ovelha) i.next();
             if(o instanceof FemeaAdulta) {
-                System.out.println("Nome: " + o.getNome() + " Sexo: " + o.getSexo() + " Raça: " + o.getRaca() +
-                        " Data Nascimento: " + o.getNascimento().getDia() + "/" + o.getNascimento().getMes() + "/" + o.getNascimento().getAno());
+                o.mostraDados();
             }
         }
     }
@@ -70,14 +106,12 @@ public class ListaOvelhas {
 
         Ovelha o;
 
+        System.out.println("Dados de todos os borregos: ");
         while (i.hasNext()) {
             o = (Ovelha) i.next();
             if(o instanceof Borrego) {
-                System.out.println("Nome: " + o.getNome() + " Sexo: " + o.getSexo() + " Raça: " + o.getRaca() +
-                        " Data Nascimento: " + o.getNascimento().getDia() + "/" + o.getNascimento().getMes() + "/" + o.getNascimento().getAno());
+                o.mostraDados();
             }
         }
     }
-
-
 }

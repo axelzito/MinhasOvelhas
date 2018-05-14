@@ -28,8 +28,8 @@ public class Borrego extends Ovelha {
     }
 
     public void mostraDados(){
-        System.out.println("Dados do Borrego:");
-        System.out.print("Nome: " + getNome() + " Sexo: " + getSexo() + " Raça: " + getRaca() +
+        //System.out.println("Dados do Borrego:");
+        System.out.println("Nome: " + getNome() + " Sexo: " + getSexo() + " Raça: " + getRaca() +
                 " Data Nascimento: " + getNascimento().getDia() + "/" + getNascimento().getMes() + "/" + getNascimento().getAno());
     }
 }
