@@ -37,7 +37,7 @@ public class FemeaAdulta extends Ovelha {
         this.paricao = paricao;
     }
 
-    //mostra os dados do animal
+    //mostra os dados do animal para relatorio geral
     public void mostraDados(){
         System.out.println("Dados da Femea Adulta:");
         System.out.print("Nome: " + getNome() + " Sexo: " + getSexo() + " Raça: " + getRaca() +

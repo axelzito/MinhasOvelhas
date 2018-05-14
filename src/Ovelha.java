@@ -2,12 +2,12 @@ public class Ovelha {
 
     /*
     Sistema gerenciador de rebanho de ovinos, onde é possível adicionar e excluir animais, prever cio, prever data de parir.
-Ao adicionar animais recém nascidos perguntar quem é a mãe (obrigatório) e o pai caso conhecido.
-Gerar relatório com todos os animais do rebanho, podendo pedir relatório específico de machos (reprodutores ou corte), fêmeas e borregos.
-Adicionar árvore genealógica e gerar aviso de consanguinidade de primeiro grau.
-Efetuar venda/compra de animais e dar baixa/alta.
-Permitir indicar a data de cobertura de uma ovelha e gerar previsão da data de parir e próximo cio..
-Permitir que clientes consultem o preço dos animais à venda.
+    Ao adicionar animais recém nascidos perguntar quem é a mãe (obrigatório) e o pai caso conhecido.
+    Gerar relatório com todos os animais do rebanho, podendo pedir relatório específico de machos (reprodutores ou corte), fêmeas e borregos.
+    Adicionar árvore genealógica e gerar aviso de consanguinidade de primeiro grau.
+    Efetuar venda/compra de animais e dar baixa/alta.
+    Permitir indicar a data de cobertura de uma ovelha e gerar previsão da data de parir e próximo cio..
+    Permitir que clientes consultem o preço dos animais à venda.
      */
 
     //Ovelhas tem id, nome, sexo, raça e data de nascimento (caso desconhecida adicionar aproximada)
