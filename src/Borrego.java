@@ -27,9 +27,9 @@ public class Borrego extends Ovelha {
         this.pai = pai;
     }
 
-    public void mostraDados(){
+    public String mostraDados(){
         //System.out.println("Dados do Borrego:");
-        System.out.println("Nome: " + getNome() + " Sexo: " + getSexo() + " Raça: " + getRaca() +
+        return ("Nome: " + getNome() + " Sexo: " + getSexo() + " Raça: " + getRaca() +
                 " Data Nascimento: " + getNascimento().getDia() + "/" + getNascimento().getMes() + "/" + getNascimento().getAno());
     }
 }

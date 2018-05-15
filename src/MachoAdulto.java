@@ -9,9 +9,9 @@ public class MachoAdulto extends Ovelha {
         this.categoria = categoria;
     }
 
-    public void mostraDados(){
+    public String mostraDados(){
         //System.out.println("Dados do Macho Adulto:");
-        System.out.println("Nome: " + getNome() + " Sexo: " + getSexo() + " Raça: " + getRaca() +
+        return ("Nome: " + getNome() + " Sexo: " + getSexo() + " Raça: " + getRaca() +
                 " Categoria: " + getCategoria() + " Data Nascimento: " + getNascimento().getDia() + "/" + getNascimento().getMes() + "/" + getNascimento().getAno());
     }
 

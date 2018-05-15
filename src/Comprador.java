@@ -1,39 +1,23 @@
+import java.util.LinkedList;
 
 public class Comprador {
 
-    private int id, idAnimal;
-    private double valor;
+    private int idComprador;
     private String nome;
+    LinkedList<Venda> ovelhasCompradas;
 
-    public Comprador(String nome, int id, int idAnimal, double valor) {
-        this.id = id;
-        this.idAnimal = idAnimal;
-        this.valor = valor;
+    public Comprador(int idComprador, String nome, LinkedList<Venda> ovelhasCompradas) {
+        this.idComprador = idComprador;
         this.nome = nome;
+        this.ovelhasCompradas = ovelhasCompradas;
     }
 
-    public int getId() {
-        return id;
+    public int getIdComprador() {
+        return idComprador;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getIdAnimal() {
-        return idAnimal;
-    }
-
-    public void setIdAnimal(int idAnimal) {
-        this.idAnimal = idAnimal;
-    }
-
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
+    public void setIdComprador(int idComprador) {
+        this.idComprador = idComprador;
     }
 
     public String getNome() {
@@ -44,7 +28,13 @@ public class Comprador {
         this.nome = nome;
     }
 
-    public void compraAnimal(){
-        
+    public void addVenda(Venda venda){
+
+        ovelhasCompradas.add(venda);
+    }
+
+    public LinkedList<Venda> listaCompras(){
+
+        return ovelhasCompradas;
     }
 }

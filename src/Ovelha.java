@@ -10,27 +10,27 @@ public class Ovelha {
     Permitir que clientes consultem o preço dos animais à venda.
      */
 
-    //Ovelhas tem id, nome, sexo, raça e data de nascimento (caso desconhecida adicionar aproximada)
+    //Ovelhas tem idOvelha, nome, sexo, raça e data de nascimento (caso desconhecida adicionar aproximada)
 
-    private int id;
+    private int idOvelha;
     private String nome, raca;
     private Sexo sexo;
     private Data nascimento;
 
-    public Ovelha(int id, String nome, Sexo sexo, String raca, Data nascimento) {
-        this.id = id;
+    public Ovelha(int idOvelha, String nome, Sexo sexo, String raca, Data nascimento) {
+        this.idOvelha = idOvelha;
         this.nome = nome;
         this.raca = raca;
         this.sexo = sexo;
         this.nascimento = nascimento;
     }
 
-    public int getId() {
-        return id;
+    public int getIdOvelha() {
+        return idOvelha;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdOvelha(int idOvelha) {
+        this.idOvelha = idOvelha;
     }
 
     public String getNome() {
@@ -65,8 +65,8 @@ public class Ovelha {
         this.nascimento = nascimento;
     }
 
-    public void mostraDados(){
-
+    public String mostraDados(){
+        return "";
     }
 
 }

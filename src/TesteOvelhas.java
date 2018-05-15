@@ -1,7 +1,11 @@
+import java.util.LinkedList;
+
 public class TesteOvelhas {
 
     public static void main(String[] args) {
 
+
+        //aux();
 
         ListaOvelhas l = new ListaOvelhas();
 
@@ -27,27 +31,42 @@ public class TesteOvelhas {
         l.addOvelha(b2);
         Borrego b3 = new Borrego(8, "Costelinha3", Sexo.macho, "f1 romanov santa ines", new Data(05,04,2018), "Branquinha", "Forlan");
         l.addOvelha(b3);
-        Borrego b4 = new Borrego(8, "Costelinha4", Sexo.macho, "f1 romanov santa ines", new Data(05,04,2018), "Branquinha", "Forlan");
+        Borrego b4 = new Borrego(56, "Costelinha4", Sexo.macho, "f1 romanov santa ines", new Data(05,04,2018), "Branquinha", "Forlan");
         l.addOvelha(b4);
 
-        l.listaOvelhas();
+        //l.listaOvelhas();
 
         f1.addFilho(b1);
         f1.addFilho(b2);
         f1.addFilho(b3);
         f1.addFilho(b4);
 
-        System.out.println("\n\n");
-        f1.mostraFilhos();
+//        LinkedList<MachoAdulto> macho = l.listaMachos();
+//        for(int i=0; i < macho.size(); i ++){
+//            String nome = macho.get(i).getNome();
+//            CategoriaMacho cat = macho.get(i).getCategoria();
+//            System.out.println("Nome: " + nome + " Categoria: " + cat);
+//        }
+        System.out.println(" ");
+        //f1.mostraFilhos();
 
         System.out.println("\n\n");
-        //f1.mostraDados();
-        l.listaReprodutor();
+        f1.mostraDados();
+//        l.listaReprodutor();
+//
+//        System.out.println("\n\n");
+//        l.listaCorte();
+//
+//        System.out.println("\n\n");
+//        l.listaMachos();
+//
+        System.out.println(l.buscaPorId(56).mostraDados());
 
-        System.out.println("\n\n");
-        l.listaCorte();
+        System.out.println(f1.prenhez(new Data(1,2,1992)).getDia() + "/" + f1.prenhez(new Data(1,2,1992)).getMes()
+                + "/" + f1.prenhez(new Data(1,2,1992)).getAno());
+    }
 
-        System.out.println("\n\n");
-        l.listaMachos();
+    public static void aux(){
+
     }
 }
