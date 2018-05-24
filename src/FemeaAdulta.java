@@ -1,7 +1,5 @@
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.*;
 
 public class FemeaAdulta extends Ovelha {
 
@@ -84,22 +82,32 @@ public class FemeaAdulta extends Ovelha {
         return this.filhos;
     }
 
+    //retorna previsão da data de parir
     public String prenhez(Date data) {
 
-        //int x = 5, y=12, z=2018;
+        //prenhez dura em media 150 dias
+        Calendar cal = GregorianCalendar.getInstance();
+        cal.setTime(data);
+        cal.add(Calendar.DATE, 150);
 
-        //implementar calculo da data
-        Date parir = new Date();
+        Date parir;
+
+        parir = cal.getTime();
 
         return sdf.format(parir);
     }
 
-    public String cio(Data data) {
+    //estima o proximo cio caso a ovelha nao tenha sido fecundada
+    public String cio(Date data) {
 
-        //int x = 5, y=12, z=2018;
+        //cio acontece a cada 17 dias
+        Calendar cal = GregorianCalendar.getInstance();
+        cal.setTime(data);
+        cal.add(Calendar.DATE, 17);
 
-        //implementar calculo da data
-        Date proxCio = new Date();
+        Date proxCio;
+
+        proxCio = cal.getTime();
 
         return sdf.format(proxCio);
     }

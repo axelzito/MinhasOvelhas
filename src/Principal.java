@@ -294,7 +294,8 @@ public class Principal {
         try {
             String entrada = JOptionPane.showInputDialog("Digite a opção desejada:\n" + "1 - Lista todos animais do rebanho\n" +
                     "2 - Lista todos machos\n" + "3 - Lista todas fêmeas\n" + "4 - Lista machos reprodutores \n" + "5 - Lista machos de corte\n" +
-                    "6 - Lista todos borregos\n" + "7 - Busca Ovelha pelo ID\n" + "8 - Lista de filhos de uma fêmea");
+                    "6 - Lista todos borregos\n" + "7 - Busca Ovelha pelo ID\n" + "8 - Lista de filhos de uma fêmea\n" +
+                    "9 - Previsão do parto\n" + "10 - Previsão do proximo cio\n"  + "11 - Voltar\n");
             if(entrada == null) {
                 return;
             }
@@ -393,7 +394,32 @@ public class Principal {
                     }
                     JOptionPane.showMessageDialog(null, relatorioFilhos);
                     break;
+                case 9:
+                    String data = JOptionPane.showInputDialog("Digite a DATA da cobertura (dd/mm/yyyy):\n");
+                    if(data == null) {
+                        return;
+                    }
+                    DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                    Date dataCobertura = (Date)formatter.parse(data);
+                    Date auxData = (Date)formatter.parse(data);
 
+                    FemeaAdulta f= new FemeaAdulta(999999,"", Sexo.femea, "", auxData, 0);
+                    JOptionPane.showMessageDialog(null, "A data prevista do parto é:\n" + f.prenhez(dataCobertura));
+                    break;
+                case 10:
+                    String data2 = JOptionPane.showInputDialog("Digite a DATA da cobertura (dd/mm/yyyy):\n");
+                    if(data2 == null) {
+                        return;
+                    }
+                    DateFormat formatter2 = new SimpleDateFormat("dd/MM/yyyy");
+                    Date dataCobertura2 = (Date)formatter2.parse(data2);
+                    Date auxData2 = (Date)formatter2.parse(data2);
+
+                    FemeaAdulta f2= new FemeaAdulta(999999,"", Sexo.femea, "", auxData2, 0);
+                    JOptionPane.showMessageDialog(null, "A data prevista do proximo cio é:\n" + f2.cio(dataCobertura2));
+                    break;
+                case 11:
+                    return;
                 default:
                     JOptionPane.showMessageDialog(null, "Opção inválida!");
                     break;
@@ -401,6 +427,8 @@ public class Principal {
         }
         catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "O valor informado está com o formato inválido!");
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
     }
 
@@ -484,7 +512,7 @@ public class Principal {
         try {
             String entrada = JOptionPane.showInputDialog("Digite a opção desejada:\n" + "1 - Ovelhas a venda\n" +
                     "2 - Ovelhas vendidas\n" + "3 - Vendas feita a um determinado comprador\n" + "4 - Valor total gasto por um comprador \n" +
-                    "5 - Valor total vendido\n");
+                    "5 - Valor total vendido\n" + "6 - Voltar\n");
             if(entrada == null) {
                 return;
             }
@@ -500,7 +528,6 @@ public class Principal {
                     }
                     JOptionPane.showMessageDialog(null, relatorio);
                     break;
-
                 case 2:
                     relatorio = "Ovelhas vendidas:\n\n";
                     LinkedList<Ovelha> ovelhasVendidas = ovelhas.listaOvelhasVendidas();
@@ -509,7 +536,6 @@ public class Principal {
                     }
                     JOptionPane.showMessageDialog(null, relatorio);
                     break;
-
                 case 3:
                     String idComprador1 = JOptionPane.showInputDialog("Digite o ID do comprador:\n");
                     if(idComprador1 == null) {
@@ -528,7 +554,6 @@ public class Principal {
                     }
                     JOptionPane.showMessageDialog(null, relatorio);
                     break;
-
                 case 4:
                     String idComprador2 = JOptionPane.showInputDialog("Digite o ID do comprador:\n");
                     if(idComprador2 == null) {
@@ -543,11 +568,11 @@ public class Principal {
                     relatorio = compradores.valorCompras(intIdComprador2) + "";
                     JOptionPane.showMessageDialog(null, relatorio);
                     break;
-
                 case 5:
                     JOptionPane.showMessageDialog(null, compradores.valorTotalVendas());
                     break;
-
+                case 6:
+                    return;
                 default:
                     JOptionPane.showMessageDialog(null, "Opção inválida!");
                     break;
@@ -557,5 +582,4 @@ public class Principal {
             JOptionPane.showMessageDialog(null, "O valor informado está com o formato inválido!");
         }
     }
-
 }
