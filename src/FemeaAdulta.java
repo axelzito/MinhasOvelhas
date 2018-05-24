@@ -1,48 +1,53 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 
 public class FemeaAdulta extends Ovelha {
 
-    private LinkedList<Borrego> filhos; //lista da classe borregos que podem ser filhos da mae
-    private Data cobertura, paricao, cio;
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    //private LinkedList<Borrego> filhos; //lista da classe borregos que podem ser filhos da mae
+    private LinkedList<String> filhos;
+    private Date cobertura, paricao, cio;
 
-    public FemeaAdulta(int id, String nome, Sexo sexo, String raca, Data nascimento) {
-        super(id, nome, Sexo.femea, raca, nascimento); //verificar se pode fazer isso de setar o sexo da femea aqui
-        filhos = new LinkedList<Borrego>();
+    public FemeaAdulta(int id, String nome, Sexo sexo, String raca, Date nascimento, double peso) {
+        super(id, nome, Sexo.femea, raca, nascimento, peso); //verificar se pode fazer isso de setar o sexo da femea aqui
+        filhos = new LinkedList<String>();
+        //filhos = new LinkedList<Borrego>();
         //sexo = Sexo.femea;
     }
 
-    public Data getCobertura() {
+    public Date getCobertura() {
         return cobertura;
     }
 
-    public void setCobertura(Data cobertura) {
+    public void setCobertura(Date cobertura) {
         this.cobertura = cobertura;
     }
 
-    public Data getParicao() {
+    public Date getParicao() {
         return paricao;
     }
 
-    public void setParicao(Data paricao) {
+    public void setParicao(Date paricao) {
         this.paricao = paricao;
     }
 
-    public Data getCio() {
+    public Date getCio() {
         return cio;
     }
 
-    public void setCio(Data cio) {
+    public void setCio(Date cio) {
         this.cio = cio;
     }
 
     //mostra os dados do animal para relatorio geral
     public String mostraDados(){
-        //System.out.println("Dados da Femea Adulta:");
-        return  ("Nome: " + getNome() + " Sexo: " + getSexo() + " Raça: " + getRaca() +
-                " Data Nascimento: " + getNascimento().getDia() + "/" + getNascimento().getMes() + "/" + getNascimento().getAno());
+        return  ("\tNome: " + getNome() + "\n\tSexo: " + getSexo() + "\n\tRaca: " + getRaca() +
+                "\n\tData de Nascimento: " + sdf.format(getNascimento()) + "\n\tPeso: " + getPeso() + "Kg" + "\n");
     }
 
+    /*
     //adiciona um filho pra mae
     public void addFilho(Borrego filho) {
         filhos.add(filho);
@@ -67,22 +72,35 @@ public class FemeaAdulta extends Ovelha {
 
         return son;
     }
+    */
 
-    public Data prenhez(Data data) {
-
-        int x = 5, y=12, z=2018;
-
-        //implementar calculo da data
-
-        return new Data(x, y, z);
+    //adiciona o nome de um novo filho
+    public void addFilho(String nomeFilho) {
+        filhos.add(nomeFilho);
     }
 
-    public Data cio(Data data) {
+    //retorna lista de filhos
+    public LinkedList<String> listaFilhos() {
+        return this.filhos;
+    }
 
-        int x = 5, y=12, z=2018;
+    public String prenhez(Date data) {
+
+        //int x = 5, y=12, z=2018;
 
         //implementar calculo da data
+        Date parir = new Date();
 
-        return new Data(x, y, z);
+        return sdf.format(parir);
+    }
+
+    public String cio(Data data) {
+
+        //int x = 5, y=12, z=2018;
+
+        //implementar calculo da data
+        Date proxCio = new Date();
+
+        return sdf.format(proxCio);
     }
 }

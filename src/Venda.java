@@ -1,10 +1,13 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Venda {
 
     private int id;
     private double preco;
-    private Data dataVenda;
+    private Date dataVenda;
 
-    public Venda(int id, double preco, Data dataVenda) {
+    public Venda(int id, double preco, Date dataVenda) {
         this.id = id;
         this.preco = preco;
         this.dataVenda = dataVenda;
@@ -26,11 +29,16 @@ public class Venda {
         this.preco = preco;
     }
 
-    public Data getDataVenda() {
+    public Date getDataVenda() {
         return dataVenda;
     }
 
-    public void setDataVenda(Data dataVenda) {
+    public void setDataVenda(Date dataVenda) {
         this.dataVenda = dataVenda;
+    }
+
+    public String mostraDados(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return ("ID Ovelha: " + getId() + "\nPre?o vendido: " + getPreco() + "\nData da Venda: " + sdf.format(getDataVenda()) + "\n");
     }
 }

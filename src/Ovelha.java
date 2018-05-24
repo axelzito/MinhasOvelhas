@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class Ovelha {
 
     /*
@@ -15,14 +17,16 @@ public class Ovelha {
     private int idOvelha;
     private String nome, raca;
     private Sexo sexo;
-    private Data nascimento;
+    private Date nascimento;
+    private double peso;
 
-    public Ovelha(int idOvelha, String nome, Sexo sexo, String raca, Data nascimento) {
+    public Ovelha(int idOvelha, String nome, Sexo sexo, String raca, Date nascimento, double peso) {
         this.idOvelha = idOvelha;
         this.nome = nome;
         this.raca = raca;
         this.sexo = sexo;
         this.nascimento = nascimento;
+        this.peso = peso;
     }
 
     public int getIdOvelha() {
@@ -57,16 +61,23 @@ public class Ovelha {
         this.sexo = sexo;
     }
 
-    public Data getNascimento() {
+    public Date getNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(Data nascimento) {
+    public void setNascimento(Date nascimento) {
         this.nascimento = nascimento;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
     }
 
     public String mostraDados(){
         return "";
     }
-
 }

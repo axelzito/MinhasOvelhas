@@ -18,7 +18,7 @@ public class ListaOvelhas {
         ovelhas.remove(ovelha);
     }
 
-    //lista apenas os machos
+    //lista todos os animais do rebanho
     public void imprimeOvelhas(){
 
         String ovelha = null;
@@ -39,6 +39,11 @@ public class ListaOvelhas {
     public LinkedList<Ovelha> listaOvelhas(){
 
         return ovelhas;
+    }
+
+    //lista todos os animais vendidos
+    public LinkedList<Ovelha> listaOvelhasVendidas(){
+        return this.ovelhasVendidas;
     }
 
     //lista apenas os machos
@@ -62,6 +67,7 @@ public class ListaOvelhas {
         return aux;
     }
 
+    //lista de machos reprodutores
     public LinkedList<MachoAdulto> listaReprodutor(){
 
         String ovelha = null;
@@ -82,6 +88,7 @@ public class ListaOvelhas {
         return aux;
     }
 
+    //lista de machos de corte
     public LinkedList<MachoAdulto> listaCorte(){
 
         String ovelha = null;
@@ -144,6 +151,7 @@ public class ListaOvelhas {
         return aux;
     }
 
+    //busca ovelha pelo id
     public Ovelha buscaPorId(int id){
 
         String ovelha = null;
@@ -160,6 +168,7 @@ public class ListaOvelhas {
         return null;
     }
 
+    //vende uma ovelha, adiciona ela na lista de vendidas e remove da lista de ovelhas do rebanho
     public void venderOvelha(int id) {
         String ovelha = null;
         Iterator i = ovelhas.iterator();
@@ -173,5 +182,25 @@ public class ListaOvelhas {
                 removeOvelha(o);
             }
         }
+    }
+
+    //Checa se o id já existe
+    public boolean checaExisteId(int id) {
+        Iterator<Ovelha> i = this.ovelhas.iterator();
+        Ovelha o;
+        while (i.hasNext()) {
+            o = (Ovelha) i.next();
+            if(id == o.getIdOvelha()){
+                return true;
+            }
+        }
+        i = this.ovelhasVendidas.iterator();
+        while (i.hasNext()) {
+            o = (Ovelha) i.next();
+            if(id == o.getIdOvelha()){
+                return true;
+            }
+        }
+        return false;
     }
 }
